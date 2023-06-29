@@ -27,6 +27,7 @@ class Web(models.Model):
         verbose_name_plural = 'Мій сайт з автозапчастинами'
         ordering = ['-time_update', 'title']
 
+    #---Спроба створити користувацькі дані---#
 
 # class UserProfile(models.Model):
 #     username = models.CharField(max_length=30, verbose_name="Нік користувача")

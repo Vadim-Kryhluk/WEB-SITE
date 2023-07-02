@@ -23,11 +23,11 @@ class RegisterUserForm(UserCreationForm):
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
     password2 = forms.CharField(label='Повтор паролю', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-
+    number_phone = forms.CharField(label='Номер телефону', widget=forms.TextInput(attrs={'class': 'form-input'}))
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'email', 'password1', 'password2')
+        fields = ('username', 'first_name', 'email', 'number_phone', 'password1', 'password2')
 
 
 class LoginUserForm(AuthenticationForm):

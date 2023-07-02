@@ -108,17 +108,18 @@ class WebCategory(DataMixin, ListView):
     #*** Доробити пошук товарів ***#
 
 class Search(DataMixin, ListView):
+    model = Web
+    context_object_name = 'posts'
     '''Пошук запчастин'''
 
     paginate_by = 2
 
     def get_queryset(self):
         return Web.objects.filter(title__icontains=self.request.GET.get("search"))
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+    def get_context_data(self, *,  object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title=('Результати за пошуком'))
-        context["q"] = self.request.GET.get("q")
+        context["search"] = self.request.GET.get("search")
         return context | c_def
 
 

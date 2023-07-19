@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<h3>{{title}} клієнта</h3>
+<h3 >{{title}} клієнта</h3>
 
-<ul> Нікнейм - {{user}}</ul>
+<ul style="font-family:Fantasy;">Нікнейм - {{user}}</ul>
 <ul>Ім'я користувача - {{user.first_name}}</ul>
 <ul>Email - {{user.email}}</ul>
 <ul>Номер телефону - {{user.number_phone}}</ul>
 <ul>Дата реєстрації - {{user.date_joined}}</ul>
+<ul>Дата останньої авторизації - {{user.last_login}}</ul>
 
 
 
